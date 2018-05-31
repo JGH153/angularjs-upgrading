@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Upgrading Angular</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.slides{
+				/* width: 95% !important; */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Upgrading Angular</section>
+				<section>
+					<section>
+						Three parts
+					</section>
+					<section>
+						angularjs to Angular 2+
+					</section>
+					<section>
+						Angular 2+ to 4/5
+					</section>
+					<section>
+						Angular 5 to 6
+					</section>
+				</section>
+
+				<section>
+					<section>
+						Angularjs, a slowly dying framework
+					</section>
+					<section>
+						Have years left, but should not develop new websites using it
+					</section>
+					<section>
+						Not all angularJS applications are the same
+					</section>
+					<section>
+						.component() introduced in angularjs 1.5
+					</section>
+				</section>
+
+				<section>
+					<section>
+						Some appliclications are easier to upgrade than others
+					</section>
+					<section>
+						Using Components?
+					</section>
+					<section>
+						Using Typescript?
+					</section>
+					<section>
+						Using the latest version of AngularJS?
+					</section>
+					<section>
+						Modular code?
+					</section>
+					<section>
+						Mom's spaghetti?
+					</section>
+					<section>
+						Are the originale developers still around?
+					</section>
+					<section>
+						You don't need comprehensive knolege of AngularJS
+					</section>
+				</section>
+				<section>
+					<section>
+						Upgrading is a great time for improving the application
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						"The upgrading guy"
+					</section>
+					<section>
+						Bli Medlem<br>
+						<iframe style="width: 700px; height: 650px;" src="https://blimedlem.bbl.no/USBL/"></iframe>
+					</section>
+					<section>
+						Epost i Portalen
+					</section>
+					<section>
+						Birdid quiz (from angular 2 beta)<br>
+						<iframe style="width: 700px; height: 650px;" src="https://hembstudios.no/birdid/bird/quiz/"></iframe>
+					</section>
+					<section>
+						Anyone stuck on Angular RC-4?
+					</section>
+					<section>
+						Min side (Added angular CLI and angular 4 -> 5)
+					</section>
+					<section>
+						They are small to medium sized projects (by 1 to 4 developers for up to a year)
+					</section>
+				</section>
+
+				<section>
+					<section>
+						Upgrading from angularjs to Angular 2+ is not trivial
+					</section>
+					<section>
+						Consider them as two separate, but related frameworks
+					</section>
+					<section>
+						In place upgrading is discuraged
+					</section>
+				</section>
+
+				<section>
+					<section>
+						My approach?
+					</section>
+					<section>
+						Use the CLI
+					</section>
+					<section>
+						Generate a new project
+					</section>
+					<section>
+						Run them in paralell (code and serve)
+					</section>
+					<section>
+						Port over part for part of the applications
+					</section>
+					<section>
+						TS/JS files will need small to medium re-write
+					</section>
+					<section>
+						HTML files can be copied with some simple search and replaces
+					</section>
+					<section>
+						Remeber Angular 2+ is easier to work with
+					</section>
+					<section>
+						Consider changing the arcitecture while upgrading
+					</section>
+					<section>
+						Angular 2 is more service and module focused
+					</section>
+				</section>
+				
+				<section>
+					Some examples
+				</section>
+
+				<section>
+					<section>
+						HTML
+					</section>
+					<section>
+						The easiest
+					</section>
+					<section>
+						<pre class=""><code class="Html" data-trim contenteditable>
+							<span ng-if="$ctrl.providerType === 0">Gmail</span>
+						</code></pre> 
+						<pre class="fragment"><code class="Html" data-trim contenteditable>
+							<span *ngIf="providerType === 0">Gmail</span>
+						</code></pre> 
+					</section>
+					<section>
+						<pre class=""><code class="Html" data-trim contenteditable>
+							<span ng-click="$ctrl.goToStep(0)">Start</span>
+						</code></pre> 
+						<pre class="fragment"><code class="Html" data-trim contenteditable>
+							<span (click)="goToStep(0)">Start</span>
+						</code></pre> 
+					</section>
+					<section>
+						<p class="fragment">
+							ng-class -> [ngClass]
+						</p>
+						<p class="fragment">
+							ng-hide -> [hidden]
+						</p>
+						<p class="fragment">
+							ng-if -> *ngIf
+						</p>
+						<p class="fragment">
+							ng-for -> *ngFor
+						</p>
+						<p class="fragment">
+							ng-click -> (click)
+						</p>
+						<p class="fragment">
+							ng-enter -> (keyup.enter)
+						</p>
+						<p class="fragment">
+							ng-class -> ngClass
+						</p>
+						<p class="fragment">
+							ng-class -> ngClass
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						TS/JS
+					</section>
+					<section>
+						<pre class=""><code class="TypeScript" data-trim contenteditable>
+
+						</code></pre> 
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

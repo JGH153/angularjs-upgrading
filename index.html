@@ -36,10 +36,10 @@
 						Three parts
 					</section>
 					<section>
-						angularjs to Angular 2+
+						angularjs to Angular
 					</section>
 					<section>
-						Angular 2+ to 4/5
+						Angular 2 to 4 and 5
 					</section>
 					<section>
 						Angular 5 to 6
@@ -51,7 +51,7 @@
 						Angularjs, a slowly dying framework
 					</section>
 					<section>
-						Have years left, but should not develop new websites using it
+						Should not develop new websites using it
 					</section>
 					<section>
 						Not all angularJS applications are the same
@@ -70,6 +70,9 @@
 					</section>
 					<section>
 						Using Typescript?
+					</section>
+					<section>
+						But remember all valid JS is valid TS (superset)
 					</section>
 					<section>
 						Using the latest version of AngularJS?
@@ -95,7 +98,7 @@
 				
 				<section>
 					<section>
-						"The upgrading guy"
+						I work at BBL
 					</section>
 					<section>
 						Bli Medlem<br>
@@ -117,6 +120,9 @@
 					<section>
 						They are small to medium sized projects (by 1 to 4 developers for up to a year)
 					</section>
+					<section>
+						"The upgrading guy"
+					</section>
 				</section>
 
 				<section>
@@ -127,7 +133,10 @@
 						Consider them as two separate, but related frameworks
 					</section>
 					<section>
-						In place upgrading is discuraged
+						In place upgrading is discouraged
+					</section>
+					<section>
+						Initial developmenbt is hard to share across a team
 					</section>
 				</section>
 
@@ -136,13 +145,16 @@
 						My approach?
 					</section>
 					<section>
-						Use the CLI
+						Use Angular CLI
 					</section>
 					<section>
 						Generate a new project
 					</section>
 					<section>
 						Run them in paralell (code and serve)
+					</section>
+					<section>
+						Port barebone core
 					</section>
 					<section>
 						Port over part for part of the applications
@@ -154,13 +166,13 @@
 						HTML files can be copied with some simple search and replaces
 					</section>
 					<section>
-						Remeber Angular 2+ is easier to work with
+						Remember Angular 2+ is easier to work with
 					</section>
 					<section>
 						Consider changing the arcitecture while upgrading
 					</section>
 					<section>
-						Angular 2 is more service and module focused
+						Angular 2 is more service, component and module focused
 					</section>
 				</section>
 				
@@ -170,7 +182,7 @@
 
 				<section>
 					<section>
-						HTML
+						Upgrading HTML
 					</section>
 					<section>
 						The easiest
@@ -192,7 +204,7 @@
 						</code></pre> 
 					</section>
 					<section>
-						<p class="fragment">
+						<p class="">
 							ng-class -> [ngClass]
 						</p>
 						<p class="fragment">
@@ -210,18 +222,12 @@
 						<p class="fragment">
 							ng-enter -> (keyup.enter)
 						</p>
-						<p class="fragment">
-							ng-class -> ngClass
-						</p>
-						<p class="fragment">
-							ng-class -> ngClass
-						</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						TS/JS
+						TS/JS ? needed?
 					</section>
 					<section>
 						<pre class=""><code class="TypeScript" data-trim contenteditable>
@@ -241,12 +247,16 @@
 						Nightwatch
 					</section>
 					<section>
-						Bli Medlem 
+						Bli Medlem<br>
 						<iframe style="width: 700px; height: 650px;" src="https://blimedlem.bbl.no/USBL/"></iframe>
 					</section>
 					<section>
 						Cypress
 					</section>
+				</section>
+
+				<section>
+					Upgrade directly to latest stable version of Angular
 				</section>
 
 				<section>
@@ -266,14 +276,14 @@
 						No need for re-write
 					</section>
 					<section>
-						https://update.angular.io/ 
-						<iframe style="width: 700px; height: 650px;" src="https://angular.io/guide/upgrade"></iframe>
+						<a href="https://update.angular.io/">update.angular.io</a>
+						<iframe style="width: 700px; height: 650px;" src="https://update.angular.io/ "></iframe>
 					</section>
 					<section>
 						Use CLI to generate new project
 					</section>
 					<section>
-						https://github.com/cexbrayat/angular-cli-diff
+						<a href="https://github.com/cexbrayat/angular-cli-diff">https://github.com/cexbrayat/angular-cli-diff</a>
 						<iframe style="width: 700px; height: 650px;" src="https://github.com/cexbrayat/angular-cli-diff/compare/1.6.8...1.7.4"></iframe>
 					</section>
 					<section>
@@ -282,14 +292,11 @@
 					<section>
 						Remember to update global Angular CLI
 					</section>
-					<section>
-						Ahead of Time (AoT) compilation
-					</section>
 				</section>
 
 				<section>
 					<section>
-						Significant changes
+						Some noteworthy changes
 					</section>
 					<section>
 						Angular httpModule -> httpClientModule
@@ -300,10 +307,13 @@
 					<section>
 						template -> ng-template
 					</section>
+					<section>
+						Ahead of Time (AoT) compilation
+					</section>
 				</section>
 
 				<section>
-					Part 3, from 5 to 6
+					Part 3, from Angular 5 to 6
 				</section>
 
 				<section>
@@ -314,13 +324,22 @@
 						ng upgrade *something*
 					</section>
 					<section>
+						Update angular CLI global instance to lates version
+					</section>
+					<section>
 						ng update @angular/cli
+					</section>
+					<section>
+						ng update @angular/core
 					</section>
 					<section>
 						ng update @angular/material
 					</section>
 					<section>
-						Update to RXjS 5.6, and then 6.0
+						Then RxJS
+					</section>
+					<section>
+						Update to RxJS 5.6, and then 6.0
 					</section>
 					<section>
 						Piping, and importing
@@ -339,15 +358,30 @@
 
 
 				<section>
-					Part 4, to infinity and beond
+					Part 4, to infinity and beyond
 				</section>
 
 				<section>
-					Upgrading weill become even easier in the future
+					Upgrading well become even easier in the future
 				</section>
 				<section>
 					Almost so painless we don't need version numbers
 				</section>
+
+				<section>
+                    Jan Greger Hemb <br />
+                    www.github.com/JGH153<br />
+                </section>
+
+                <section>
+                    Questions?
+                </section>
+                
+
+				<section>
+					This page is intentionally left blank
+				</section>
+
 
 			</div>
 		</div>
@@ -360,6 +394,7 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },

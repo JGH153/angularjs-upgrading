@@ -23,7 +23,7 @@
 
 		<style>
 			.slides{
-				/* width: 95% !important; */
+				width: 95% !important;
 			}
 		</style>
 	</head>
@@ -36,7 +36,7 @@
 						Three parts
 					</section>
 					<section>
-						angularjs to Angular
+						AngularJS to Angular
 					</section>
 					<section>
 						Angular 2 to 4 and 5
@@ -48,22 +48,23 @@
 
 				<section>
 					<section>
-						Angularjs, a slowly dying framework
+						AngularJS, a slowly dying framework
+						<img class="stretch" data-src="content/1_iOmwue1uxW2O6sbDUEItPw.jpeg">
 					</section>
 					<section>
 						Should not develop new websites using it
 					</section>
 					<section>
-						Not all angularJS applications are the same
+						Not all AngularJS applications are the same
 					</section>
 					<section>
-						.component() introduced in angularjs 1.5
+						.component() introduced in AngularJS 1.5
 					</section>
 				</section>
 
 				<section>
 					<section>
-						Some appliclications are easier to upgrade than others
+						Some applications are easier to upgrade than others
 					</section>
 					<section>
 						Using Components?
@@ -72,7 +73,7 @@
 						Using Typescript?
 					</section>
 					<section>
-						But remember all valid JS is valid TS (superset)
+						All valid JS is valid TS (superset)
 					</section>
 					<section>
 						Using the latest version of AngularJS?
@@ -87,14 +88,17 @@
 						Are the originale developers still around?
 					</section>
 					<section>
-						You don't need comprehensive knolege of AngularJS
+						Does it rely on few libraries?
+					</section>
+					<section>
+						You don't need comprehensive knowledge of AngularJS
 					</section>
 				</section>
-				<section>
+				<!-- <section>
 					<section>
 						Upgrading is a great time for improving the application
 					</section>
-				</section>
+				</section> -->
 				
 				<section>
 					<section>
@@ -108,14 +112,11 @@
 						Epost i Portalen
 					</section>
 					<section>
+						Min side (Added angular CLI and angular 4 -> 5)
+					</section>
+					<section>
 						Birdid quiz (from angular 2 beta)<br>
 						<iframe style="width: 700px; height: 650px;" src="https://hembstudios.no/birdid/bird/quiz/"></iframe>
-					</section>
-					<section>
-						Anyone stuck on Angular RC-4?
-					</section>
-					<section>
-						Min side (Added angular CLI and angular 4 -> 5)
 					</section>
 					<section>
 						They are small to medium sized projects (by 1 to 4 developers for up to a year)
@@ -127,7 +128,7 @@
 
 				<section>
 					<section>
-						Upgrading from angularjs to Angular 2+ is not trivial
+						Upgrading from AngularJS to Angular 2+ is not trivial
 					</section>
 					<section>
 						Consider them as two separate, but related frameworks
@@ -136,7 +137,7 @@
 						In place upgrading is discouraged
 					</section>
 					<section>
-						Initial developmenbt is hard to share across a team
+						Initial development is hard to share across a team
 					</section>
 				</section>
 
@@ -165,15 +166,15 @@
 					<section>
 						HTML files can be copied with some simple search and replaces
 					</section>
-					<section>
+					<!-- <section>
 						Remember Angular 2+ is easier to work with
-					</section>
-					<section>
+					</section> -->
+					<!-- <section>
 						Consider changing the arcitecture while upgrading
 					</section>
 					<section>
 						Angular 2 is more service, component and module focused
-					</section>
+					</section> -->
 				</section>
 				
 				<section>
@@ -227,16 +228,92 @@
 
 				<section>
 					<section>
-						TS/JS ? needed?
+						TS/JS
 					</section>
 					<section>
 						<pre class=""><code class="TypeScript" data-trim contenteditable>
+							class SidebarComponentController { .... }
 
+							SidebarComponentController.$inject = ['$stateParams'];
+		
+							class SidebarComponent {
+								controller: any = SidebarComponentController;
+								templateUrl: string = '/sidebar/SidebarTemplate.html';
+								bindings: any = {
+									changeList: '&',
+									toggleSidebar: '&'
+								};
+							}
+						
+							angular.module('portal.innboks').component('innboksSidebar', new SidebarComponent());
 						</code></pre> 
+					</section>
+					<section>
+						<pre class=""><code class="TypeScript" data-trim contenteditable>
+							@Component({
+								selector: 'app-innboks-sidebar',
+								templateUrl: './innboks-sidebar.component.html'
+							})
+							export class InnboksSidebarComponent implements OnInit, OnDestroy {
+
+								@Input() public showActions: boolean;
+
+								constructor(
+									private router: Router,
+									private route: ActivatedRoute
+								) {}
+
+								.....
+
+							}
+						</code></pre> 
+					</section>
+					<section>
+						No longer inputting functions
+						<p class="fragment">
+							Only emitting events
+						</p>
+					</section>
+					<!-- <section>
+						Improved modules
+						<p class="fragment">
+							Can have one for the project, one for each component, or somewhere in between
+						</p>
+					</section> -->
+					<section>
+						AngularJS applications are not required to be object oriented
+						<pre class=""><code class="TypeScript" data-trim contenteditable>
+							app.controller('adminLogController', function($scope, $http) {	
+								"use strict";	
+								$scope.updateAdminLogData = function() {
+									$http({
+										method: 'GET',
+										url: 'api/getAdminLog.php'
+									})
+									.....
+								};	
+								$scope.updateAdminLogData();	
+							});
+						</code></pre>
+					</section>
+					<section>
+						Project will have usless code
+						<p class="fragment">
+							Port constructor -> ngOnInit
+						</p>
+						<p class="fragment">
+							Port functions called in constructor
+						</p>
+						<p class="fragment">
+							Port functions called from HTML
+						</p>
+						<p class="fragment">
+							Look for code not ported and consider leaving it
+						</p>
 					</section>
 				</section>
 
-				<section>
+				<!-- <section>
 					<section>
 						Testing the project while upgrading
 					</section>
@@ -253,7 +330,7 @@
 					<section>
 						Cypress
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					Upgrade directly to latest stable version of Angular
@@ -261,7 +338,8 @@
 
 				<section>
 					https://angular.io/guide/upgrade
-					<iframe style="width: 700px; height: 650px;" src="https://angular.io/guide/upgrade"></iframe>
+					<br>
+					<iframe style="width: 700px; height: 600px;" src="https://angular.io/guide/upgrade"></iframe>
 				</section>
 
 				<section>
@@ -275,15 +353,24 @@
 					<section>
 						No need for re-write
 					</section>
+
+					<style>
+						.upgradeGuidIframe {
+							width: 700px;
+							height: 650px;
+							background-color:white;
+						}
+					</style>
+					
 					<section>
-						<a href="https://update.angular.io/">update.angular.io</a>
-						<iframe style="width: 700px; height: 650px;" src="https://update.angular.io/ "></iframe>
+						<a href="https://update.angular.io/">update.angular.io</a><br>
+						<iframe class="upgradeGuidIframe" src="https://update.angular.io/ "></iframe>
 					</section>
 					<section>
 						Use CLI to generate new project
 					</section>
 					<section>
-						<a href="https://github.com/cexbrayat/angular-cli-diff">https://github.com/cexbrayat/angular-cli-diff</a>
+						<a href="https://github.com/cexbrayat/angular-cli-diff">https://github.com/cexbrayat/angular-cli-diff</a><br>
 						<iframe style="width: 700px; height: 650px;" src="https://github.com/cexbrayat/angular-cli-diff/compare/1.6.8...1.7.4"></iframe>
 					</section>
 					<section>
@@ -294,7 +381,7 @@
 					</section>
 				</section>
 
-				<section>
+				<!-- <section>
 					<section>
 						Some noteworthy changes
 					</section>
@@ -310,7 +397,7 @@
 					<section>
 						Ahead of Time (AoT) compilation
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					Part 3, from Angular 5 to 6
@@ -334,6 +421,9 @@
 					</section>
 					<section>
 						ng update @angular/material
+					</section>
+					<section>
+						Done! (Almost)
 					</section>
 					<section>
 						Then RxJS
